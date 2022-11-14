@@ -17,4 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', "App\Http\Controllers\SiteController@Hello");
+Route::get('/hello', 'App\Http\Controllers\SiteController@Hello');
+
+Route::get('/users/{id}', 'App\Http\Controllers\UsersController@show');
+
+Route::get('/posts/{post}/comments/{comment}', function ($post, $comment) {
+    return "posts $post, comments $comment";
+});
