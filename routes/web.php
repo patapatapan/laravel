@@ -24,3 +24,5 @@ Route::get('/users/{id}', 'App\Http\Controllers\UsersController@show');
 Route::get('/posts/{post}/comments/{comment}', function ($post, $comment) {
     return "posts $post, comments $comment";
 });
+
+Route::get('admin', 'App\Http\Controllers\SiteController@dashboard');

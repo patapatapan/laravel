@@ -8,4 +8,13 @@ class SiteController extends Controller
     {
         return 'hello';
     }
+    public function dashboard()
+    {
+        return view('dashboard');
+    }
+
+    /* public function gallery()
+{
+return view('gallery');
+}*/
 }
