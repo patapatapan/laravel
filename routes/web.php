@@ -17,12 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', 'App\Http\Controllers\SiteController@Hello');
-
 Route::get('/users/{id}', 'App\Http\Controllers\UsersController@show');
 
 Route::get('/posts/{post}/comments/{comment}', function ($post, $comment) {
     return "posts $post, comments $comment";
 });
 
-Route::get('admin', 'App\Http\Controllers\SiteController@dashboard');
+Route::namespace ('App\Http\Controllers')->group(function () {
+    Route::get('/hello', 'SiteController@Hello');
+    Route::get('admin', 'SiteController@dashboard');
+    Route::get('pics', 'SiteController@gallery');
+    Route::get('demo', 'SiteController@demo');
+});
+
+// Route::resource('posts', 'App\Http\Controllers\PostController');
+//Route::apiresource('posts', 'App\Http\Controllers\Api\PostController');
