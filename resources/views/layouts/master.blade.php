@@ -53,19 +53,22 @@
 		<div class="info__wrapper">
 			<div class="info current--info">
 				<h1 class="text name">Charizard  X</h1>
-				<h4 class="text location">Scotland</h4>
-				<p class="text description">The mountains are calling</p>
+				<h4 class="text location">@yield('location1')</h4>
+				<p class="text description">@yield('content')</p>
 			</div>
 
 			<div class="info next--info">
 				<h1 class="text name">Rayquaza mega</h1>
-				<h4 class="text location">Peru</h4>
-				<p class="text description">Adventure is never far away</p>
+				<h4 class="text location">@yield('location2')</h4>
+				<p class="text description">@section('content1')
+                <div style='color: white'>你好</div>
+          @show
+        </p>
 			</div>
 
 			<div class="info previous--info">
 				<h1 class="text name">Dialga</h1>
-				<h4 class="text location">France</h4>
+				<h4 class="text location">@yield('location3')</h4>
 				<p class="text description">Let your dreams come true</p>
 			</div>
 		</div>
