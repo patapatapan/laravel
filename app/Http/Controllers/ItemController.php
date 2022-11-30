@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PostRequest;
 use Illuminate\Http\Request;
 
-//use Illuminate\Support\Facades\Validator;
-
-class PostController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,21 +32,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostRequest $request)
+    public function store(Request $request)
     {
-        //return 'first row';
-        /*$validator = Validator::make($request->all(), [
-        'title' => 'required | max:10',
-        'price' => 'required | integer | min:0',
-        'desc' => 'max:200',
-        ]);
-        if ($validator->fails()) {
-        //return $validator;
-        return 'fuck';
-        }*/
-        return 'ok';
-
-        // return redirect(url('posts/' . 1));
+        //
     }
 
     /**

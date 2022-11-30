@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->share('global', '就決定是你了');
+        view()->composer(['test.*'], function ($view) {
+            $view->with('multi', '多龍巴魯特 ');
+            $view->with('multi1', '多龍梅西亞');
+        });
     }
 }

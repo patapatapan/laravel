@@ -39,6 +39,14 @@
             </ul>
         </div>
     </nav>
+
+    <div>
+      <!--{{$global}}-->
+      @section('aaa')
+      <div>你好</div>
+      <h1>FUCK</h1>
+      @show
+    </div>
 <!-- partial -->
   <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
