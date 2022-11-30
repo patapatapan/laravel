@@ -27,6 +27,8 @@ class PostController extends Controller
     public function create()
     {
         //
+        //dd('create');
+        return view('posts.create');
     }
 
     /**
@@ -37,7 +39,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        //return 'first row';
+        return $request->all();
         /*$validator = Validator::make($request->all(), [
         'title' => 'required | max:10',
         'price' => 'required | integer | min:0',

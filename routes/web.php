@@ -45,7 +45,7 @@ Route::get('/url1', function () {
     return action([PostController::class, 'doAny']); //方法
 });
 
-//Route::resource('posts', 'App\Http\Controllers\PostController');
+Route::resource('posts', 'App\Http\Controllers\PostController');
 //Route::apiresource('posts', 'App\Http\Controllers\Api\PostController');
 
 Route::get('/url', function () {
@@ -54,4 +54,4 @@ Route::get('/url', function () {
     return action([SiteController::class, 'demo3']); //方法
 });
 
-Route::any('store', 'App\Http\Controllers\PostController@store');
+Route::get('store', 'App\Http\Controllers\PostController@store');
