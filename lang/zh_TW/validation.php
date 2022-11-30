@@ -150,7 +150,8 @@ return [
         'tags_list' => '標籤',
         'mode' => '模式',
         'mediums' => '文章媒體',
-        'subject' => '主旨',
+        'subject' => '標題',
+        'desc' => '內文',
     ],
 
 ];

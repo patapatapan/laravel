@@ -32,6 +32,28 @@
 {!! Form::label('fav', '傑尼龜　') !!}
 {!! Form::checkbox('fav', '007', false) !!}<br><br>
 
+{!! Form::select('month', $months, $month, ['placeholder' => '請選擇月份']) !!}<br><br>
+
+{!! Form::select('mode', $modes, $mode, ['placeholder' => '請選擇商品模式']) !!}<br><br>
+
+{!! Form::label('number', '數字', []) !!}
+區間數字下拉
+{!! Form::selectRange('number', 1, 10, 5, []) !!}<br><br>
+
+{!! Form::label('email', '郵箱', []) !!}
+{{ Form::email('email',null,[]) }}<br><br>
+
+{!! Form::label('password', '數字', []) !!}
+{!! Form::password('password', []) !!}<br><br>
+
+{!! Form::label('sell_at', '何時上架', []) !!}
+{!! Form::date('sell_at',null, []) !!}<br><br>
+
+年紀{!! Form::number('age', '18', ['min'=>18, 'max'=>80]) !!}<br><br>
+
+{!! Form::label('pic', '圖片', []) !!}
+{!! Form::file('pic', []) !!}<br><br>
+
 {!! Form::submit('送出', []) !!}
 {!! Form::reset('重置', []) !!}
 
