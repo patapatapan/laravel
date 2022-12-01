@@ -1,8 +1,6 @@
 <h1>歡迎光臨，哥布林衝鋒小隊</h1>
 {!! Form::open(['url'=>'articles','method'=>'POST','files'=>true]) !!}
 
-
-
 {!! Form::label('subject', '標題') !!}
 {!! Form::text('subject' , '老師好帥') !!}<br><br>
 

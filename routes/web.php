@@ -57,3 +57,5 @@ Route::get('/url', function () {
 Route::get('store', 'App\Http\Controllers\PostController@store');
 
 Route::resource('articles', 'App\Http\Controllers\ArticleController');
+
+Route::resource('homework', 'App\Http\Controllers\Article2Controller');

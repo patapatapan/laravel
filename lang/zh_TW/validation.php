@@ -152,6 +152,7 @@ return [
         'mediums' => '文章媒體',
         'subject' => '標題',
         'desc' => '內文',
+        'tags' => '標籤',
     ],
 
 ];
