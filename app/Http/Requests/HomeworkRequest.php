@@ -26,7 +26,7 @@ class HomeworkRequest extends FormRequest
         return [
             //
             'subject' => 'required | max:50',
-            'category'=> 'integer',
+            'category' => 'integer',
             'desc' => 'string | max:4000',
             'status' => 'boolean',
             'sort' => 'integer',

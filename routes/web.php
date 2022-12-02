@@ -59,3 +59,21 @@ Route::get('store', 'App\Http\Controllers\PostController@store');
 Route::resource('articles', 'App\Http\Controllers\ArticleController');
 
 Route::resource('homework', 'App\Http\Controllers\Article2Controller');
+
+//字串轉陣列
+Route::get('/toarray', function () {
+    $str = '1,2,3';
+    $arr = explode(',', $str);
+    dd($arr);
+});
+
+//字串轉陣列
+Route::get('/tostring', function () {
+    $arr = [1, 2, 3];
+    $str = implode(',', $arr);
+    dd($str);
+});
+
+Route::get('/config', function () {
+    dd(config('database.default'));
+});
