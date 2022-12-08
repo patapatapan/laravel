@@ -23,6 +23,8 @@ return new class extends Migration
             $table->timestamp('enabled_at');
             $table->string('tags', 100)->nullable();
             $table->string('pic', 255)->nullable();
+            $table->timestamps();
+
         });
     }
 
