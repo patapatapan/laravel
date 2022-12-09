@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\SiteController;
+use App\Models\Article;
+use App\Models\Cgy;
 use Illuminate\Support\Facades\Route;
 
 //$url = action([SiteController::class, 'demo3']);
@@ -46,7 +48,7 @@ Route::get('/url1', function () {
 });
 
 Route::resource('posts', 'App\Http\Controllers\PostController');
-//Route::apiresource('posts', 'App\Http\Controllers\Api\PostController');
+Route::apiresource('posts', 'App\Http\Controllers\Api\PostController');
 
 Route::get('/url', function () {
     //return url('demo3');//網域
@@ -76,4 +78,40 @@ Route::get('/tostring', function () {
 
 Route::get('/config', function () {
     dd(config('database.default'));
+});
+
+Route::resource('/cgies', 'App\Http\Controllers\CgyController');
+
+Route::get('/newcgy', function () {
+    $cgy = new Cgy;
+    $cgy->title = '戰鬥開始';
+    $cgy->desc = '派出噴火龍';
+    $cgy->enabled = true;
+    $cgy->save();
+    //Cgy::truncate();
+    /*$cgy = new Cgy(['title' => '對方派出', 'desc' => '水箭龜', 'enabled' => true]);
+$cgy->save();*/
+});
+
+Route::get('/distinct', function () {
+    //$data = Article::select('cgy_id')->distinct('cgy_id')->get();
+    $data = Article::select(['id', 'subject', 'cgy_id'])->distinct('cgy_id')->get();
+    return $data;
+});
+
+Route::get('/pluck', function () {
+    //$data = Cgy::select(['id', 'title'])->get();
+    $data = Cgy::pluck('title', 'id');
+    return $data;
+});
+
+Route::get('/changecgy', function () {
+    $cgy = Cgy::find(1);
+    $cgy->title = '新分類';
+    $cgy->save();
+});
+
+Route::get('/delcgy/{cgy}', function (Cgy $cgy) {
+    //$cgy->delete();
+    Cgy::destroy($cgy->id);
 });

@@ -10,4 +10,5 @@ class Cgy extends Model
     use HasFactory;
 
     protected $dates = ['enabled_at'];
+    protected $fillable = ['title', 'desc', 'enabled'];
 }
