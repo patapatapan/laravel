@@ -17,7 +17,7 @@ class CgyController extends Controller
     {
         //
         //$cgies = Cgy::where('id', '>', 50)->where('id', '<=', 80)->orderBy('updated_at', 'desc')->get();
-        $date = Carbon::createFromFormat('Y-m-d h:i:s', '2020-12-08 00:00:00');
+        $date = Carbon::createFromFormat('Y-m-d H:i:s', '2020-12-08 12:00:00');
         $cgies = Cgy::where('enabled_at', '>', $date)->get();
         return $cgies;
     }
