@@ -17,7 +17,10 @@ class TagFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'subject' => $this->faker->word,
+            'title' => $this->faker->word,
+            'url' => $this->faker->url,
+            'sort' => rand(0, 20),
         ];
     }
 }

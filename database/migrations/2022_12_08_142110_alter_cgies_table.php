@@ -32,7 +32,8 @@ return new class extends Migration
             //
             $table->renameColumn('title', 'subject');
             $table->integer('sort')->nullable(false)->default(0)->change();
-
         });
+        //Schema::dropIfExists('cgies');
+
     }
 };

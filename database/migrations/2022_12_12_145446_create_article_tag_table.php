@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('article_tag', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('tag_id')->unsigned();//不為負
-            $table->bigInteger('article_id')->unsigned();
+            $table->foreignId('article_id')->constrained();
+            $table->foreignId('tag_id')->constrained();
+            $table->string('color')->default('#FFFFFF');
             $table->timestamps();
         });
     }
@@ -28,6 +29,13 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('article_tag', function (Blueprint $table) {
+            $table->dropForeign('article_id');
+            $table->dropForeign('tag_id');
+
+            //$table->timestamps();
+        });
+
         Schema::dropIfExists('article_tag');
     }
 };

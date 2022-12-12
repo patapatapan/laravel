@@ -119,8 +119,15 @@ Route::get('/delcgy/{cgy}', function (Cgy $cgy) {
 Route::get('/relation', function () {
     //$article = Article::find(1);
     //dd($article->cgy->subjcet);
-    $cgy = Cgy::find(1);
-    dd($cgy->articles()->where('enabled', 1)->get());
+    //$cgy = Cgy::find(1);
+    //dd($cgy->articles()->where('enabled', 1)->get());\
+
+    /*$aritcle = Article::find(1);
+    dd($aritcle->tags);*/
+
+    /*$tag = Tag::find(1);
+dd($tag->articles);*/
+
 });
 
 Route::get('/changerelation', function () {
