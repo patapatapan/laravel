@@ -23,6 +23,7 @@ return new class extends Migration
             $table->timestamp('enabled_at');
             $table->string('tags', 100)->nullable();
             $table->string('pic', 255)->nullable();
+            $table->foreignId('cgy_id')->constrined();
             $table->timestamps();
 
         });
@@ -35,6 +36,9 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('articles', function (Blueprint $table) {
+            $table->dropForeign(['cgy_id']);
+        });
         Schema::dropIfExists('articles');
     }
 };

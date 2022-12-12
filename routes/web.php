@@ -115,3 +115,12 @@ Route::get('/delcgy/{cgy}', function (Cgy $cgy) {
     //$cgy->delete();
     Cgy::destroy($cgy->id);
 });
+
+Route::get('/changerelation', function () {
+    $article = Article::find(1);
+    $article->cgy_id = 5;
+    // $cgy_4 = Cgy::find(4);
+    //$aritcle->cgy()->associate($cgy_4);
+    $article->save();
+    dd($article);
+});
