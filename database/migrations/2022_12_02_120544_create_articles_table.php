@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('subject', 100);
             $table->text('content');
-            $table->integer('cgy_id')->unsigned();
+            //$table->integer('cgy_id')->unsigned();
             $table->boolean('enabled')->default(true);
             $table->integer('sort')->default(0);
             $table->timestamp('enabled_at');

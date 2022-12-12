@@ -116,11 +116,22 @@ Route::get('/delcgy/{cgy}', function (Cgy $cgy) {
     Cgy::destroy($cgy->id);
 });
 
+Route::get('/relation', function () {
+    //$article = Article::find(1);
+    //dd($article->cgy->subjcet);
+    $cgy = Cgy::find(1);
+    dd($cgy->articles()->where('enabled', 1)->get());
+});
+
 Route::get('/changerelation', function () {
-    $article = Article::find(1);
+    /*$article = Article::find(1);
     $article->cgy_id = 5;
     // $cgy_4 = Cgy::find(4);
     //$aritcle->cgy()->associate($cgy_4);
     $article->save();
-    dd($article);
+    dd($article);*/
+    $cgy = Cgy::find(1);
+    $article = Article::where('cgy_id', 5)->first();
+    $cgy->articles()->save($article);
+    dd(Article::find($article->id));
 });
